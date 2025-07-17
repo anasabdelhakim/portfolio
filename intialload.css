@@ -1,0 +1,115 @@
+#boot-splash {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000; /* or your brand color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+body {
+  list-style: none;
+  overflow: hidden;
+}
+
+#boot-splash .text-img {
+  width: 160px;
+  height: 160px;
+  background-color: #444;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: 0.3s;
+  font-size: 6rem;
+  color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-bar {
+  width: 180px;
+  height: 10px;
+  background: #444;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+
+.loader-bar::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, #1f1f1f, #777777, #e5e5e5);
+  animation: load 1.8s linear forwards;
+  border-radius: 2px;
+}
+.waiting-text {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  visibility: hidden;
+  animation: showText 0s forwards;
+  animation-delay: 2s;
+  color: #eaeaea;
+  margin-top: 10px;
+}
+
+@keyframes showText {
+  to {
+    visibility: visible;
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.dot {
+  opacity: 0;
+  animation: dotTyping 0.9s linear infinite;
+}
+
+.dot-1 {
+  animation-delay: 0.3s;
+}
+.dot-2 {
+  animation-delay: 0.6s;
+}
+.dot-3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes dotTyping {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
