@@ -1,4 +1,10 @@
-import Header, { ButtonToggle, Logo, Navlinks } from "./Header";
+import Header, {
+  Avtar,
+  ButtonToggle,
+  Logo,
+  MobNavlinks,
+  Navlinks,
+} from "./Header";
 import Footer from "./footer";
 import { Outlet } from "react-router-dom";
 
@@ -10,12 +16,16 @@ const layout = () => {
           <Logo />
           <Navlinks />
         </div>
-
-        <ButtonToggle />
+        <div className="flex items-center gap-2">
+          <Avtar />
+          <ButtonToggle />
+        </div>
       </Header>
       <main className="flex-1">
         <Outlet />
+        <MobNavlinks />
       </main>
+
       <Footer />
     </div>
   );

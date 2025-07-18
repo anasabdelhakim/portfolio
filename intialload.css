@@ -113,3 +113,9 @@ body {
     opacity: 1;
   }
 }
+
+@media (max-width: 475px) {
+  .waiting-text {
+    font-size: 13px;
+  }
+}

@@ -4,10 +4,11 @@ import { NavLink } from "react-router-dom";
 import { useThemeStore } from "@/store/appStore";
 import { Moon, Sun } from "lucide-react";
 import { type ReactNode } from "react";
+import { useIsMobile } from "@/hook/MobilrScreen";
 
 function Header({ children }: { children: ReactNode }) {
   return (
-    <header className="w-full h-18 flex justify-between px-2 sm:px-5 md:px-10 sticky top-0 z-50 bg-background/70 backdrop-blur-md transition-transform duration-200 border-b-1 border-break ">
+    <header className="w-full h-18 flex justify-between px-2 sm:px-5 md:px-10 sticky top-0 z-50 bg-background/70 backdrop-blur-md transition-transform duration-200 border-b-1 border-break">
       {children}
     </header>
   );
@@ -34,7 +35,7 @@ export function Logo() {
 
 export function Navlinks() {
   return (
-    <nav className="flex justify-center items-center gap-3">
+    <nav className="flex justify-center items-center gap-3 max-xs:hidden">
       <li>
         <NavLink
           className={({ isActive }) =>
@@ -75,6 +76,52 @@ export function Navlinks() {
   );
 }
 
+export function MobNavlinks() {
+  const isMobile = useIsMobile();
+  if (isMobile) {
+    return (
+      <nav className="fixed bottom-0 z-50 h-15 w-full bg-background border-t-1 border-break flex items-center px-2 justify-between shadow-el">
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link ${
+                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+              }`
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link ${
+                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+              }`
+            }
+            to="/one"
+          >
+            one
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link ${
+                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+              }`
+            }
+            to="/two"
+          >
+            two
+          </NavLink>
+        </li>
+      </nav>
+    );
+  }
+}
+
 export const ButtonToggle = () => {
   const darkMode = useThemeStore((state) => state.darkMode);
   const toggleDarkMode = useThemeStore((state) => state.toggleDarkMode);
@@ -85,6 +132,17 @@ export const ButtonToggle = () => {
         {darkMode ? <Sun color="white" /> : <Moon color="black" />}
       </div>
     </button>
+  );
+};
+export const Avtar = () => {
+  return (
+    <div className="w-10 h-10 rounded-md border-2 focus cursor-pointer opacity-hover">
+      <img
+        className="w-full h-full rounded-sm"
+        src="./assets/Avtar.jpeg"
+        alt=""
+      />
+    </div>
   );
 };
 
