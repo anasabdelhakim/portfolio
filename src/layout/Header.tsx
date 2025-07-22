@@ -17,6 +17,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useIsMobile } from "@/hook/MobilrScreen";
 import { motion } from "motion/react";
 import { useClickOutside } from "@/hook/clickOutside";
+import type { LottieProps } from "@/types";
 
 function Header({ children }: { children: ReactNode }) {
   return (
@@ -26,8 +27,9 @@ function Header({ children }: { children: ReactNode }) {
   );
 }
 export function Logo() {
+
   const isMobile = useIsMobile();
-  const [Lottie, setLottie] = useState<null | React.FC<any>>(null);
+  const [Lottie, setLottie] = useState<null | React.FC<LottieProps>>(null);
 
   useEffect(() => {
     if (!isMobile) {

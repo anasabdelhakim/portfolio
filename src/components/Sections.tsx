@@ -1,11 +1,6 @@
 import { ScrollReveal } from "@/animation/Reveal";
-import React from "react";
 
-type SectionsProps = {
-  title: string;
-};
-
-const Sections: React.FC<SectionsProps> = ({ title }) => {
+const Sections = ({ title }: { title: string }) => {
   return (
     <ScrollReveal>
       <div className="text-center flex justify-center items-center flex-col sm:mb-20 mb-15 max-xs:mb-10">
