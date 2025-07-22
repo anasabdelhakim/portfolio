@@ -27,7 +27,6 @@ function Header({ children }: { children: ReactNode }) {
   );
 }
 export function Logo() {
-
   const isMobile = useIsMobile();
   const [Lottie, setLottie] = useState<null | React.FC<LottieProps>>(null);
 
@@ -224,7 +223,7 @@ function AvatarImage() {
       onClick={() => setZoomIn(true)}
       className={`${
         zoomIn ? "scale-200 lg:scale-[2.5] max-xs:scale-100 cursor-auto" : ""
-      } w-30 h-30 max-sm:w-25 max-sm:h-25 rounded-md z-30 relative origin-top-right transition-transform`}
+      } min-w-30 min-h-30 max-sm:min-w-25 max-sm:min-h-25 rounded-md z-30 relative origin-top-right transition-transform`}
     >
       {zoomIn && (
         <div
@@ -273,7 +272,7 @@ function SocialLinks() {
   ];
 
   return (
-    <div className="h-30 max-sm:h-25 flex flex-col justify-between">
+    <div className="flex flex-col justify-between">
       {links.map(({ label, href, Icon }, i) => (
         <motion.div
           key={label}
