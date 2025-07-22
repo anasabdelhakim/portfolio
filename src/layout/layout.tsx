@@ -1,4 +1,5 @@
 import Header, {
+  AvatarToolTip,
   Avtar,
   ButtonToggle,
   Logo,
@@ -12,14 +13,20 @@ const layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header>
-        <div className="flex items-center gap-10">
+        
+        <div className="flex items-center gap-5">
           <Logo />
           <Navlinks />
         </div>
+
         <div className="flex items-center gap-2">
-          <Avtar />
+          <Avtar>
+            <AvatarToolTip />
+          </Avtar>
           <ButtonToggle />
         </div>
+
+
       </Header>
       <main className="flex-1">
         <Outlet />

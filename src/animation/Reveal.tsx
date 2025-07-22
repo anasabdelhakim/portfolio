@@ -1,15 +1,35 @@
-import { motion } from "framer-motion";
+// components/ScrollReveal.tsx
+import { motion } from "motion/react";
+import { useInView } from "react-intersection-observer";
 import type { ReactNode } from "react";
 
-export function Reveal({ children }: { children: ReactNode }) {
+interface ScrollRevealProps {
+  children: ReactNode;
+  delay?: number;
+  yOffset?: number;
+  className?: string;
+}
+
+export const ScrollReveal = ({
+  children,
+  delay = 0.3,
+  yOffset = 20,
+  className = "",
+}: ScrollRevealProps) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0, y: 30 }} // Zoomed out + invisible
-      animate={{ scale: 1, opacity: 1, y: 0 }} // Zoom in + fade in
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="px-10"
+      ref={ref}
+      initial={{ opacity: 0, y: yOffset }}
+      animate={inView ? { opacity: 1, y: 0 } : undefined}
+      transition={{ duration: 0.3, delay, ease: "easeInOut" }}
+      className={className}
     >
       {children}
     </motion.div>
   );
-}
+};

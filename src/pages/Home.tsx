@@ -1,13 +1,14 @@
-import { Reveal } from "@/animation/Reveal";
 import { Hero, HeroText } from "@/components/Hero";
+import Skills from "@/components/skills";
 
 const Home = () => {
   return (
-    <Hero>
-      <Reveal>
+    <div>
+      <Hero>
         <HeroText />
-      </Reveal>
-    </Hero>
+      </Hero>
+      <Skills />
+    </div>
   );
 };
 

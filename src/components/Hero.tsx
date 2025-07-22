@@ -1,12 +1,14 @@
 import { useThemeStore } from "@/store/appStore";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+
 import type { ReactNode } from "react";
+import { ArrowDownWideNarrow } from "lucide-react";
 
 export function Hero({ children }: { children: ReactNode }) {
   const darkMode = useThemeStore((state) => state.darkMode);
   return (
     <div
-      className={`flex flex-col text-center items-center min-h-[calc(100vh-64px)]   ${
+      className={`flex flex-col text-center items-center min-h-[calc(100vh-74px)] ${
         darkMode ? "bg-fanBlack" : "bg-fanLight"
       }`}
     >
@@ -16,86 +18,117 @@ export function Hero({ children }: { children: ReactNode }) {
 }
 
 export function HeroText() {
+  const appReady = useThemeStore((state) => state.appReady);
   const title = "Portfolio .";
   const subtitle = "Anas Abdelhakim Frontend Developer";
   return (
-    <div className="mt-10 max-xs:mt-30 flex flex-col gap-5 items-center max-xs:justify-center max-w-full relative z-30">
-      <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center">
-        <motion.span
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ x: 150, opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-        >
-          A
-        </motion.span>
-        <motion.span
-          initial={{ x: -150, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-        >
-          A
-        </motion.span>
-      </div>
+    <div className="mt-10  flex flex-col gap-5 max-xs:justify-center text-center items-center max-w-full relative z-30 ">
+      {appReady && (
+        <>
+          <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center ">
+            <motion.span
+              animate={{ x: 0, opacity: 1 }}
+              initial={{ x: 150, opacity: 0 }}
+              transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
+            >
+              A
+            </motion.span>
+            <motion.span
+              initial={{ x: -150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
+            >
+              A
+            </motion.span>
+          </div>
 
-      <div className="sm:text-9xl flex hero-text text-6xl max-xs:text-5xl">
-        {title.split("").map((char, i) => (
-          <motion.h1
-            key={i}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: i * 0.1 }}
+          <motion.div className="sm:text-9xl flex hero-text text-7xl max-xs:text-6xl">
+            {title.split("").map((char, i) => (
+              <motion.h1
+                key={i}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4 + i * 0.1,
+                }}
+                className="font-extrabold"
+              >
+                {char}
+              </motion.h1>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ maxWidth: "0ch" }}
+            animate={{ maxWidth: `${subtitle.length}ch` }}
+            transition={{ duration: 0.8, delay: 0.9, ease: "easeInOut" }}
+            className="overflow-hidden border-r-2 text-sub-color  border-gray-600 dark:border-gray-300 whitespace-nowrap font-mono sm:text-2xl text-lg  max-xs:text-sm"
           >
-            {char}
-          </motion.h1>
-        ))}
-      </div>
+            {subtitle}
+          </motion.div>
 
-      <motion.div
-        initial={{ maxWidth: "0ch" }}
-        animate={{ maxWidth: `${subtitle.length}ch` }}
-        transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
-        className="overflow-hidden border-r-2 text-text-color border-gray-600 dark:border-gray-300 whitespace-nowrap font-mono sm:text-2xl text-lg  max-xs:text-sm"
-      >
-        {subtitle}
-      </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.6, ease: "easeInOut" }}
+            className="sm:max-w-xl max-w-sm  described-title max-xs:text-[10px] max-xs:max-w-60"
+          >
+            I craft responsive and interactive web applications with clean and
+            performance code passion for modern frontend technologies.
+          </motion.p>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.6, ease: "easeInOut" }}
-        className="sm:max-w-xl h-auto max-w-sm sm:text-lg text-sm text-stone-500 max-xs:text-[10px]"
-      >
-        I craft responsive and interactive web applications with clean and
-        performance code passion for modern frontend technologies.
-      </motion.p>
+          <div className="flex justify-center items-center sm:gap-8 gap-5">
+            <motion.button
+              className="border-2 sm:px-8 sm:py-3 px-3 py-2 text-sm max-xs:text-[10px] rounded-md focus hover:bg-background"
+              initial={{ opacity: 0, x: -100, scaleX: 1 }}
+              animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                delay: 1.3,
+              }}
+            >
+              See Projects
+            </motion.button>
 
-      <div className="flex justify-center items-center sm:gap-8 gap-5">
-        <motion.button
-          className="border-2 sm:px-8 sm:py-3 px-3 py-2 text-sm max-xs:text-[10px] rounded-md focus hover:bg-background"
-          initial={{ opacity: 0, x: -100, scaleX: 1 }}
-          animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            delay: 1.2,
-          }}
-        >
-          See Projects
-        </motion.button>
+            <motion.button
+              className="border-2 sm:px-8 sm:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[10px] focus hover:bg-background"
+              initial={{ opacity: 0, x: 100, scaleX: 1 }}
+              animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
+              transition={{
+                duration: 1,
+                ease: "easeInOut",
+                delay: 1.3,
+              }}
+            >
+              Contact Me
+            </motion.button>
+          </div>
 
-        <motion.button
-          className="border-2 sm:px-8 sm:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[10px] focus hover:bg-background"
-          initial={{ opacity: 0, x: 100, scaleX: 1 }}
-          animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-            delay: 1.2,
-          }}
-        >
-          Contact Me
-        </motion.button>
-      </div>
+          <motion.a
+            href="#skills"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.8, ease: "easeInOut", duration: 0.6 }}
+            className=" flex flex-col cursor-pointer w-full"
+          >
+            <p className="text-left max-xs:text-[10px]">scroll to explore</p>
+            <motion.span
+              animate={{ y: [-5, 3, -5] }}
+              transition={{
+                duration: 1.5,
+                ease: [0.65, 0, 0.35, 1],
+                repeat: Infinity,
+                repeatType: "loop",
+                times: [0, 0.6, 1],
+              }}
+              className="mt-2 inline-block"
+            >
+              <ArrowDownWideNarrow size={22} />
+            </motion.span>
+          </motion.a>
+        </>
+      )}
     </div>
   );
 }

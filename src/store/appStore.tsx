@@ -3,6 +3,9 @@ import { create } from "zustand";
 type ThemeState = {
   darkMode: boolean;
   toggleDarkMode: () => void;
+
+  appReady: boolean;
+  setAppReady: () => void;
 };
 
 export const useThemeStore = create<ThemeState>((set) => {
@@ -37,5 +40,8 @@ export const useThemeStore = create<ThemeState>((set) => {
         applyTheme(next);
         return { darkMode: next };
       }),
+
+    appReady: false,
+    setAppReady: () => set({ appReady: true }),
   };
 });

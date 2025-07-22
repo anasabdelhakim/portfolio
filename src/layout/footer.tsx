@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 border-t-1 border-break ">
+    <footer className="py-8 px-4 border-t-1 border-break max-sm:mb-11">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Name or Logo */}
         <div className="text-xl font-semibold">Anas Abdelhakim</div>
@@ -52,11 +52,6 @@ export default function Footer() {
             <Mail className="w-5 h-5" />
           </a>
         </div>
-      </div>
-
-      {/* Bottom Text */}
-      <div className="text-center text-xs text-gray-500 mt-6">
-        © {new Date().getFullYear()} Anas Abdelhakim. All rights reserved.
       </div>
     </footer>
   );

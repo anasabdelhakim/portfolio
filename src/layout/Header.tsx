@@ -1,32 +1,57 @@
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import {
+  Linkedin,
+  Facebook,
+  Twitter,
+  Github,
+  Home,
+  Folder,
+  Mail,
+  Minimize,
+  Expand,
+} from "lucide-react";
 
 import { NavLink } from "react-router-dom";
 import { useThemeStore } from "@/store/appStore";
 import { Moon, Sun } from "lucide-react";
-import { type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useIsMobile } from "@/hook/MobilrScreen";
+import { motion } from "motion/react";
+import { useClickOutside } from "@/hook/clickOutside";
 
 function Header({ children }: { children: ReactNode }) {
   return (
-    <header className="w-full h-18 flex justify-between px-2 sm:px-5 md:px-10 sticky top-0 z-50 bg-background/70 backdrop-blur-md transition-transform duration-200 border-b-1 border-break">
+    <header className="w-full h-18 flex justify-between px-2 sm:px-5 sticky top-0 z-50 bg-background/70 backdrop-blur-md transition-transform duration-200 border-b-1 border-break max-xs:h-14">
       {children}
     </header>
   );
 }
 export function Logo() {
+  const isMobile = useIsMobile();
+  const [Lottie, setLottie] = useState<null | React.FC<any>>(null);
+
+  useEffect(() => {
+    if (!isMobile) {
+      import("@lottiefiles/dotlottie-react").then((mod) => {
+        setLottie(() => mod.DotLottieReact);
+      });
+    }
+  }, [isMobile]);
+
   return (
-    <div className="flex justify-center items-center mr-5">
-      <div className="w-35 absolute md:-left-5 -left-10">
-        <DotLottieReact
-          src="/lottie/BMS-Rocket.lottie"
-          autoplay
-          loop
-          speed={1.5}
-          color="black"
-          className="w-full h-full"
-        />
+    <div className="flex justify-center items-center relative">
+      <div className="w-35 absolute -left-10">
+        {Lottie && !isMobile && (
+          <Lottie
+            src="/lottie/BMS-Rocket.lottie"
+            autoplay
+            loop
+            speed={1.5}
+            color="black"
+            className="w-full h-full"
+          />
+        )}
       </div>
-      <h1 className="text-3xl font-bold bg-gradient-to-l from-gray-800 via-gray-500 to-gray-300 bg-clip-text text-transparent sm:block hidden sm:ml-10">
+      <h1 className="text-3xl gradient-text font-bold  sm:block ml-15 max-sm:ml-0">
         Anas.dev
       </h1>
     </div>
@@ -35,41 +60,44 @@ export function Logo() {
 
 export function Navlinks() {
   return (
-    <nav className="flex justify-center items-center gap-3 max-xs:hidden">
+    <nav className="flex justify-center items-center gap-3 max-sm:hidden">
       <li>
         <NavLink
           className={({ isActive }) =>
-            `nav-link ${
+            `nav-link flex items-center gap-1 ${
               isActive ? "focus hover:opacity-100" : "nav-link-inactive"
             }`
           }
           to="/"
         >
+          <Home className="w-4 h-4" />
           Home
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            `nav-link ${
+            `nav-link flex items-center gap-1 ${
               isActive ? "focus hover:opacity-100" : "nav-link-inactive"
             }`
           }
           to="/one"
         >
-          one
+          <Folder className="w-4 h-4" />
+          Project
         </NavLink>
       </li>
       <li>
         <NavLink
           className={({ isActive }) =>
-            `nav-link ${
+            `nav-link flex items-center gap-1 ${
               isActive ? "focus hover:opacity-100" : "nav-link-inactive"
             }`
           }
           to="/two"
         >
-          two
+          <Mail className="w-4 h-4" />
+          Contact
         </NavLink>
       </li>
     </nav>
@@ -84,37 +112,40 @@ export function MobNavlinks() {
         <li>
           <NavLink
             className={({ isActive }) =>
-              `nav-link ${
+              `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
                 isActive ? "focus hover:opacity-100" : "nav-link-inactive"
               }`
             }
             to="/"
           >
+            <Home className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
             Home
           </NavLink>
         </li>
         <li>
           <NavLink
             className={({ isActive }) =>
-              `nav-link ${
+              `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
                 isActive ? "focus hover:opacity-100" : "nav-link-inactive"
               }`
             }
             to="/one"
           >
-            one
+            <Folder className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+            Project
           </NavLink>
         </li>
         <li>
           <NavLink
             className={({ isActive }) =>
-              `nav-link ${
+              `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
                 isActive ? "focus hover:opacity-100" : "nav-link-inactive"
               }`
             }
             to="/two"
           >
-            two
+            <Mail className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+            Contact
           </NavLink>
         </li>
       </nav>
@@ -134,38 +165,129 @@ export const ButtonToggle = () => {
     </button>
   );
 };
-export const Avtar = () => {
+export const Avtar = ({ children }: { children: ReactNode }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useClickOutside(wrapperRef, () => setIsOpen(false));
+
   return (
-    <div className="w-10 h-10 rounded-md border-2 focus cursor-pointer opacity-hover">
+    <div
+      ref={wrapperRef}
+      className="w-10 h-10 rounded-md border-2 cursor-pointer relative border-break"
+    >
       <img
+        onClick={() => setIsOpen((prev) => !prev)}
         className="w-full h-full rounded-sm"
         src="./assets/Avtar.jpeg"
         alt=""
       />
+
+      <div
+        className={`absolute focus right-0 top-12 z-20 p-1 rounded-md shadow-md border-2 flex justify-center items-start gap-3 transition-all duration-200 origin-top-right
+        ${
+          isOpen
+            ? "scale-100 opacity-100"
+            : "scale-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        {children}
+        <span
+          className="absolute -top-2 right-1
+          w-0 h-0 
+          border-l-8 border-l-transparent 
+          border-r-8 border-r-transparent 
+          border-b-8 border-b-foreground"
+        />
+      </div>
     </div>
   );
 };
+export function AvatarToolTip() {
+  return (
+    <div className="relative flex gap-3">
+      <AvatarImage />
+      <SocialLinks />
+    </div>
+  );
+}
+
+function AvatarImage() {
+  const [zoomIn, setZoomIn] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useClickOutside(wrapperRef, () => setZoomIn(false));
+
+  return (
+    <div
+      ref={wrapperRef}
+      onClick={() => setZoomIn(true)}
+      className={`${
+        zoomIn ? "scale-200 lg:scale-[2.5] max-xs:scale-100 cursor-auto" : ""
+      } w-30 h-30 max-sm:w-25 max-sm:h-25 rounded-md z-30 relative origin-top-right transition-transform`}
+    >
+      {zoomIn && (
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            setZoomIn(false);
+          }}
+          className="absolute right-1 top-1 cursor-pointer z-40 bg-black/60 rounded-full p-0.5 max-xs:hidden"
+        >
+          <Minimize className="w-2.5 h-2.5 text-white" />
+        </div>
+      )}
+
+      {!zoomIn && (
+        <div className="overlay-avtar text-stone-200 hover:opacity-100 transition-opacity">
+          <div className="absolute top-2 right-1">
+            <Expand size={16} />
+          </div>
+          view photo
+        </div>
+      )}
+
+      <img
+        className="w-full h-full rounded-sm pointer-events-none"
+        src="./assets/Avtar.jpeg"
+        alt="avatar"
+      />
+    </div>
+  );
+}
+
+function SocialLinks() {
+  const links = [
+    {
+      label: "Linkedin",
+      href: "https://linkedin.com/in/anas-abdelhakim",
+      Icon: Linkedin,
+    },
+    {
+      label: "Github",
+      href: "https://github.com/anasabdelhakim",
+      Icon: Github,
+    },
+    { label: "Twitter", href: "https://twitter.com", Icon: Twitter },
+    { label: "Facebook", href: "https://facebook.com", Icon: Facebook },
+  ];
+
+  return (
+    <div className="h-30 max-sm:h-25 flex flex-col justify-between">
+      {links.map(({ label, href, Icon }, i) => (
+        <motion.div
+          key={label}
+          initial={{ x: -10, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.2, ease: "easeInOut", delay: i * 0.3 }}
+          className="text-sm max-sm:text-[12px] font-medium text-center dark:hover:bg-stone-800 px-2 py-1 hover:bg-stone-200 transition-colors rounded-md flex items-center justify-between gap-2"
+        >
+          <span>{label}:</span>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <Icon className="w-4 h-4" />
+          </a>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 export default Header;
-
-// <DotLottieReact
-//   src="/rocket.lottie"
-//   autoplay
-//   onComplete={() => console.log("Done playing!")}
-//   onLoopComplete={() => console.log("Loop finished")}
-//   onEnterFrame={(e) => console.log("Frame", e.currentFrame)}
-// />
-
-// const animRef = useRef(null);
-
-// <DotLottieReact
-//   src="/BMS-Rocket.lottie"
-//   autoplay
-//   loop={false}
-//   lottieRef={animRef}
-// />;
-
-// <button onClick={() => animRef.current?.play()}>Play</button>
-// <button onClick={() => animRef.current?.pause()}>Pause</button>
-// <button onClick={() => animRef.current?.stop()}>Stop</button>
-// <button onClick={() => animRef.current?.setSpeed(0.5)}>Half Speed</button>
