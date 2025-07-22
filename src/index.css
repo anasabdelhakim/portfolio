@@ -63,6 +63,9 @@
 
 /* Component classes */
 @layer components {
+  .section-size {
+    @apply sm:min-h-[calc(100vh-74px)] min-h-[calc(100vh-134px)] max-xs:min-h-[calc(100vh-116px)];
+  }
   .gradient-text {
     @apply bg-gradient-to-l from-gray-800 via-gray-500 to-gray-300 bg-clip-text text-transparent;
   }
@@ -91,8 +94,8 @@
   .icon-hoverd {
     @apply p-2 hover:bg-stone-200 dark:hover:bg-stone-800  transition-all rounded-full;
   }
-  .btn-gradient{
-    @apply bg-gradient-to-l from-gray-700 via-gray-500 to-gray-400
+  .btn-gradient {
+    @apply bg-gradient-to-l from-gray-700 via-gray-500 to-gray-400;
   }
 }
 button {

@@ -13,7 +13,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-16 max-xs:py-8 px-4 max-w-6xl mx-auto  min-h-[calc(100vh-74px)]"
+      className="py-16 max-xs:py-8 px-4 max-w-6xl mx-auto section-size"
     >
       <Sections title="About Me" />
       <div className="flex flex-col-reverse md:flex-row gap-10">

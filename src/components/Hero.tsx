@@ -8,7 +8,7 @@ export function Hero({ children }: { children: ReactNode }) {
   const darkMode = useThemeStore((state) => state.darkMode);
   return (
     <div
-      className={`flex flex-col text-center items-center min-h-[calc(100vh-74px)] ${
+      className={`flex flex-col text-center items-center section-size py-10 px-4 ${
         darkMode ? "bg-fanBlack" : "bg-fanLight"
       }`}
     >
@@ -22,7 +22,7 @@ export function HeroText() {
   const title = "Portfolio .";
   const subtitle = "Anas Abdelhakim Frontend Developer";
   return (
-    <div className="mt-10  flex flex-col gap-5 max-xs:justify-center text-center items-center max-w-full relative z-30 ">
+    <div className="flex flex-col gap-5 max-xs:justify-center text-center items-center max-w-full relative z-30">
       {appReady && (
         <>
           <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center ">
@@ -71,7 +71,7 @@ export function HeroText() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6, ease: "easeInOut" }}
-            className="sm:max-w-xl max-w-sm  described-title max-xs:text-[10px] max-xs:max-w-60"
+            className="sm:max-w-xl max-w-sm   described-title max-xs:text-[12px]"
           >
             I craft responsive and interactive web applications with clean and
             performance code passion for modern frontend technologies.
@@ -79,7 +79,7 @@ export function HeroText() {
 
           <div className="flex justify-center items-center sm:gap-8 gap-5">
             <motion.button
-              className="border-2 sm:px-8 sm:py-3 px-3 py-2 text-sm max-xs:text-[10px] rounded-md focus hover:bg-background"
+              className="border-2 sm:px-8 sm:py-3 px-4 py-2 text-sm max-xs:text-[12px] rounded-md focus hover:bg-background"
               initial={{ opacity: 0, x: -100, scaleX: 1 }}
               animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
               transition={{
@@ -92,7 +92,7 @@ export function HeroText() {
             </motion.button>
 
             <motion.button
-              className="border-2 sm:px-8 sm:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[10px] focus hover:bg-background"
+              className="border-2 sm:px-8 sm:py-3 px-4 py-2 text-sm rounded-md max-xs:text-[12px] focus hover:bg-background"
               initial={{ opacity: 0, x: 100, scaleX: 1 }}
               animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
               transition={{
@@ -110,9 +110,9 @@ export function HeroText() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.8, ease: "easeInOut", duration: 0.6 }}
-            className=" flex flex-col cursor-pointer w-full"
+            className="mt-5 flex flex-col cursor-pointer w-full"
           >
-            <p className="text-left max-xs:text-[10px]">scroll to explore</p>
+            <p className="text-left max-xs:text-[12px]">scroll to explore</p>
             <motion.span
               animate={{ y: [-5, 3, -5] }}
               transition={{

@@ -9,11 +9,10 @@ import Header, {
 import Footer from "./footer";
 import { Outlet } from "react-router-dom";
 
-const layout = () => {
+const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header>
-        
         <div className="flex items-center gap-5">
           <Logo />
           <Navlinks />
@@ -25,8 +24,6 @@ const layout = () => {
           </Avtar>
           <ButtonToggle />
         </div>
-
-
       </Header>
       <main className="flex-1">
         <Outlet />
@@ -38,4 +35,4 @@ const layout = () => {
   );
 };
 
-export default layout;
+export default Layout;

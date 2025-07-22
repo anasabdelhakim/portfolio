@@ -125,4 +125,9 @@ html {
   .waiting-text {
     font-size: 13px;
   }
+  #boot-splash .text-img {
+    width: 120px;
+    height: 120px;
+    font-size: 4.5rem;
+  }
 }
