@@ -21,7 +21,7 @@ import type { LottieProps } from "@/types";
 
 function Header({ children }: { children: ReactNode }) {
   return (
-    <header className="w-full h-18 flex justify-between px-2 sm:px-5 sticky top-0 z-50 bg-background/70 backdrop-blur-md transition-transform duration-200 border-b-1 border-break max-xs:h-14">
+    <header className="w-full h-18 flex justify-between px-2 md:px-5 sticky top-0 z-50 bg-background/70 backdrop-blur-md transition-transform duration-200 border-b-1 border-break max-xs:h-14">
       {children}
     </header>
   );
@@ -40,7 +40,7 @@ export function Logo() {
 
   return (
     <div className="flex justify-center items-center relative">
-      <div className="w-35 absolute -left-10">
+      <div className="w-35 absolute -left-12 lg:-left-10">
         {Lottie && !isMobile && (
           <Lottie
             src="/lottie/BMS-Rocket.lottie"
@@ -52,7 +52,7 @@ export function Logo() {
           />
         )}
       </div>
-      <h1 className="text-3xl gradient-text font-bold  sm:block ml-15 max-sm:ml-0">
+      <h1 className="text-3xl gradient-text font-bold  sm:block ml-12 lg:ml-15 max-sm:ml-0">
         Anas.dev
       </h1>
     </div>
@@ -71,7 +71,7 @@ export function Navlinks() {
           }
           to="/"
         >
-          <Home className="w-4 h-4" />
+          <Home className="w-5 h-5" />
           Home
         </NavLink>
       </li>
@@ -82,9 +82,9 @@ export function Navlinks() {
               isActive ? "focus hover:opacity-100" : "nav-link-inactive"
             }`
           }
-          to="/one"
+          to="/projects"
         >
-          <Folder className="w-4 h-4" />
+          <Folder className="w-5 h-5" />
           Project
         </NavLink>
       </li>
@@ -97,7 +97,7 @@ export function Navlinks() {
           }
           to="/two"
         >
-          <Mail className="w-4 h-4" />
+          <Mail className="md:w-5 md:h-5" />
           Contact
         </NavLink>
       </li>
@@ -130,7 +130,7 @@ export function MobNavlinks() {
                 isActive ? "focus hover:opacity-100" : "nav-link-inactive"
               }`
             }
-            to="/one"
+            to="/projects"
           >
             <Folder className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
             Project

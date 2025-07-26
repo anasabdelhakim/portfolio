@@ -38,7 +38,7 @@
   --foreground: #f9f9f9;
   --sub-color: #eaeaea;
   --border-stone: #f5f5f4;
-  --secondary: #1a1919;
+  --secondary: #141414;
   --secondary-foreground: oklch(0.985 0 0);
 }
 
@@ -94,9 +94,6 @@
   .icon-hoverd {
     @apply p-2 hover:bg-stone-200 dark:hover:bg-stone-800  transition-all rounded-full;
   }
-  .btn-gradient {
-    @apply bg-gradient-to-l from-gray-700 via-gray-500 to-gray-400;
-  }
 }
 button {
   cursor: pointer;
@@ -104,7 +101,7 @@ button {
 /* Utility classes */
 @layer utilities {
   .opacity-hover {
-    @apply hover:opacity-70 transition-opacity;
+    @apply hover:opacity-80 transition-opacity;
   }
   .border-break {
     @apply border-stone-300 dark:border-stone-600;

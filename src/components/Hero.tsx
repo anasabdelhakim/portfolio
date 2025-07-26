@@ -8,7 +8,7 @@ export function Hero({ children }: { children: ReactNode }) {
   const darkMode = useThemeStore((state) => state.darkMode);
   return (
     <div
-      className={`flex flex-col text-center items-center section-size py-10 px-4 ${
+      className={`flex flex-col text-center items-center section-size py-10 px-4  ${
         darkMode ? "bg-fanBlack" : "bg-fanLight"
       }`}
     >
@@ -25,7 +25,7 @@ export function HeroText() {
     <div className="flex flex-col gap-5 max-xs:justify-center text-center items-center max-w-full relative z-30">
       {appReady && (
         <>
-          <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center ">
+          <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center">
             <motion.span
               animate={{ x: 0, opacity: 1 }}
               initial={{ x: 150, opacity: 0 }}
@@ -79,7 +79,7 @@ export function HeroText() {
 
           <div className="flex justify-center items-center sm:gap-8 gap-5">
             <motion.button
-              className="border-2 sm:px-8 sm:py-3 px-4 py-2 text-sm max-xs:text-[12px] rounded-md focus hover:bg-background"
+              className="border-2 lg:text-lg sm:px-8 sm:py-3 px-4 py-2 text-sm max-xs:text-[12px] rounded-md focus hover:bg-background"
               initial={{ opacity: 0, x: -100, scaleX: 1 }}
               animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
               transition={{
@@ -92,7 +92,7 @@ export function HeroText() {
             </motion.button>
 
             <motion.button
-              className="border-2 sm:px-8 sm:py-3 px-4 py-2 text-sm rounded-md max-xs:text-[12px] focus hover:bg-background"
+              className="border-2 lg:text-lg sm:px-8 sm:py-3 px-4 py-2 text-sm rounded-md max-xs:text-[12px] focus hover:bg-background"
               initial={{ opacity: 0, x: 100, scaleX: 1 }}
               animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
               transition={{

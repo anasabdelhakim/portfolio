@@ -1,8 +1,3 @@
-// sections/Skills.tsx
-// import { CodeXml } from "lucide-react";
-// import { Palette } from "lucide-react";
-// import { Zap } from "lucide-react";
-// import { Coffee } from "lucide-react";
 import { ChevronsRight, ChevronRight, Download } from "lucide-react";
 
 import { ScrollReveal } from "./../animation/Reveal";
@@ -13,7 +8,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="py-16 max-xs:py-8 px-4 max-w-6xl mx-auto section-size"
+      className="py-16 max-xs:py-8 px-4  max-w-6xl mx-auto section-size"
     >
       <Sections title="About Me" />
       <div className="flex flex-col-reverse md:flex-row gap-10">
@@ -46,10 +41,13 @@ export default function Skills() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm max-xs:text-[12px] max-xs:w-full rounded-md focus hover:bg-background flex items-center justify-center"
+              className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm max-xs:text-[12px] max-xs:w-full rounded-md dark:bg-black bg-white border-break hover:bg-background flex items-center justify-center"
             >
               See Projects
-              <ChevronsRight size={20} />
+              <ChevronsRight
+                size={20}
+                className="group-hover:translate-x-1.5 duration-300 transition-transform"
+              />
             </motion.button>
 
             {/* Connecting Line */}
@@ -58,9 +56,9 @@ export default function Skills() {
               whileInView={{ opacity: 1, width: 30 }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="h-4 border-y-2 focus flex justify-center items-center  max-xs:hidden"
+              className="h-4 border-y-2 dark:bg-black bg-white border-break flex justify-center items-center  max-xs:hidden"
             >
-              <span className="w-full border-b-2 focus"></span>
+              <span className="w-full border-b-2 dark:bg-black bg-white border-break"></span>
             </motion.div>
 
             {/* Button 2 */}
@@ -69,10 +67,13 @@ export default function Skills() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="border-2  lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full focus hover:bg-background flex items-center justify-center"
+              className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full bg-gradient-to-r from-white dark:from-black  to-secondary border-break hover:bg-background flex items-center justify-center"
             >
               Contact Me
-              <ChevronRight size={20} />
+              <ChevronRight
+                size={20}
+                className="group-hover:translate-x-1.5 duration-300 transition-transform"
+              />
             </motion.button>
             <motion.div
               initial={{ opacity: 0, width: 0 }}
@@ -86,10 +87,13 @@ export default function Skills() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.9, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full focus hover:bg-background flex items-center gap-1 justify-center"
+              className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full focus hover:bg-background flex items-center gap-1 justify-center"
             >
               Download CV
-              <Download size={20} />
+              <Download
+                size={20}
+                className="group-hover:-rotate-90 group-hover:translate-x-1  transition-transform duration-300"
+              />
             </motion.button>
           </div>
         </div>
