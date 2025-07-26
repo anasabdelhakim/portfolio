@@ -59,9 +59,6 @@
   body {
     @apply bg-background text-foreground;
   }
-  li:hover img {
-    filter: saturate(200);
-  }
 }
 
 /* Component classes */
