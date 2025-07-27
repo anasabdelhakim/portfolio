@@ -1,22 +1,23 @@
 import { ChevronsRight, ChevronRight, Download } from "lucide-react";
-
 import { ScrollReveal } from "./../animation/Reveal";
 import Sections from "./Sections";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-
+import { useIsMobile } from "@/hook/MobilrScreen";
 export default function Skills() {
+  const isMobile = useIsMobile(475);
+
   return (
     <section
       id="skills"
-      className="py-16 max-xs:py-8 px-4  max-w-6xl mx-auto section-size"
+      className="py-16 max-xs:py-8 px-4 max-w-6xl mx-auto section-size"
     >
       <Sections title="About Me" />
       <div className="flex flex-col-reverse md:flex-row gap-10">
         {/* Text Section */}
-        <div className="lg:w-2/3 md:w-3/5 space-y-4  sm:text-left">
+        <div className="lg:w-2/3 md:w-3/5 space-y-4 sm:text-left">
           <ScrollReveal>
-            <h2 className="sm:text-4xl text-3xl max-xs:text-2xl font-bold ">
+            <h2 className="sm:text-4xl text-3xl max-xs:text-2xl font-bold">
               Who I Am
             </h2>
           </ScrollReveal>
@@ -35,7 +36,8 @@ export default function Skills() {
               real-world applications.
             </p>
           </ScrollReveal>
-          <div className="flex flex-row max-xs:flex-col items-center mt-8 max-xs:justify-center justify-start max-xs:gap-3 ">
+
+          <div className="flex flex-row max-xs:flex-col items-center mt-8 max-xs:justify-center justify-start max-xs:gap-3">
             <Link to="projects" className="max-xs:w-full">
               <motion.button
                 initial={{ opacity: 0 }}
@@ -57,17 +59,18 @@ export default function Skills() {
               whileInView={{ opacity: 1, width: 30 }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
-              className="h-4 border-y-2 dark:bg-black bg-white border-break flex justify-center items-center  max-xs:hidden"
+              className="h-4 border-y-2 dark:bg-black bg-white border-break flex justify-center items-center max-xs:hidden"
             >
               <span className="w-full border-b-2 dark:bg-black bg-white border-break"></span>
             </motion.div>
+
             <Link to="contact" className="max-xs:w-full">
               <motion.button
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full bg-gradient-to-r from-white dark:from-black  to-secondary border-break hover:bg-background flex items-center justify-center"
+                className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full bg-gradient-to-r from-white dark:from-black to-secondary border-break hover:bg-background flex items-center justify-center"
               >
                 Contact Me
                 <ChevronRight
@@ -76,13 +79,15 @@ export default function Skills() {
                 />
               </motion.button>
             </Link>
+
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: 30 }}
               transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.2 }}
               className="h-4 border-y-2 focus flex justify-center items-center max-xs:hidden"
-            ></motion.div>
+            />
+
             <motion.a
               href="/CV.pdf"
               download
@@ -95,29 +100,31 @@ export default function Skills() {
               Download CV
               <Download
                 size={20}
-                className="group-hover:-rotate-90 group-hover:translate-x-1  transition-transform duration-300"
+                className="group-hover:-rotate-90 group-hover:translate-x-1 transition-transform duration-300"
               />
             </motion.a>
           </div>
         </div>
 
-        <motion.div
-          initial={{ x: -30, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
-          className="relative lg:w-1/3 md:w-2/5 w-1/2 mx-auto overflow-hidden rounded-lg shadow-lg sm:block  max-xs:hidden"
-        >
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t  from-white/20 via-transparent to-white/80  dark:from-black/70 dark:to-black/20 z-10 pointer-events-none" />
-
-          {/* Image */}
-          <img
-            src="./assets/about me.jpg"
-            alt="About Me"
-            className="w-full h-full object-cover grayscale brightness-110 dark:brightness-125"
-          />
-        </motion.div>
+        {/* Image - Only for desktop */}
+        {!isMobile && (
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
+            className="relative lg:w-1/3 md:w-2/5 w-1/2 mx-auto overflow-hidden rounded-lg shadow-lg sm:block"
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-white/80 dark:from-black/70 dark:to-black/20 z-10 pointer-events-none" />
+            <img
+              src="/assets/about me.avif"
+              alt="About Me"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover grayscale brightness-110 dark:brightness-125"
+            />
+          </motion.div>
+        )}
       </div>
     </section>
   );

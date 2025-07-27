@@ -9,7 +9,6 @@ import {
   Minimize,
   Expand,
 } from "lucide-react";
-
 import { NavLink } from "react-router-dom";
 import { useThemeStore } from "@/store/appStore";
 import { Moon, Sun } from "lucide-react";
@@ -179,7 +178,7 @@ export const Avtar = ({ children }: { children: ReactNode }) => {
       <img
         onClick={() => setIsOpen((prev) => !prev)}
         className="w-full h-full rounded-sm"
-        src="./assets/Avtar.jpeg"
+        src="./assets/Avtar.avif"
         alt=""
       />
 
@@ -238,7 +237,7 @@ function AvatarImage() {
       )}
 
       {!zoomIn && (
-        <div className="overlay-avtar text-neutral-200 hover:opacity-100 transition-opacity">
+        <div className="overlay-avtar text-neutral-200 hover:opacity-100 transition-opacity duration-150">
           <div className="absolute top-2 right-1">
             <Expand size={16} />
           </div>
@@ -248,7 +247,7 @@ function AvatarImage() {
 
       <img
         className="w-full h-full rounded-sm pointer-events-none"
-        src="./assets/Avtar.jpeg"
+        src="./assets/Avtar.avif"
         alt="avatar"
       />
     </div>

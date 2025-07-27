@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const cards: CardT[] = [
   {
-    img: "./assets/ecomerce.png",
+    img: "./assets/ecomerce.avif",
     title: "Fuchsia App",
     description:
       "A full-stack e-commerce platform with responsive design, filtering, cart management, Stripe checkout, and secure authentication.",
@@ -15,7 +15,7 @@ const cards: CardT[] = [
     github: "https://github.com/anasabdelhakim/Fuchsia_Ecomerce.git",
   },
   {
-    img: "./assets/quizmastr-app.png",
+    img: "./assets/quizmastr-app.avif",
     title: "Quiz Mastro",
     description:
       "An interactive quiz app with admin dashboard, question types, grading, timer-based quizzes, and student login.",
@@ -24,7 +24,7 @@ const cards: CardT[] = [
     github: "https://github.com/anasabdelhakim/Quiz-app.git",
   },
   {
-    img: "./assets/Hdo-movie.png",
+    img: "./assets/Hdo-movie.avif",
     title: "HDO Box",
     description:
       "A movie app clone with categorized sliders, React Router, TMDb API, playlist feature, and lazy loading for performance.",
@@ -33,7 +33,7 @@ const cards: CardT[] = [
     github: "https://github.com/anasabdelhakim/HDO_BOX-Clone.git",
   },
   {
-    img: "./assets/world-wise.png",
+    img: "./assets/world-wise.avif",
     title: "World Wise",
     description:
       "A travel app for marking visited cities with weather and notes, using Mapbox, geocoding, and a responsive interface.",
