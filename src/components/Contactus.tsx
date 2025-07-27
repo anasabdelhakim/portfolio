@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Loader, Send, Phone, Mail, MapPin } from "lucide-react";
+import Sections from "./Sections";
 
 const formSchema = z.object({
   Firstname: z
@@ -24,10 +25,13 @@ type ContactFormData = z.infer<typeof formSchema>;
 
 export function Contact() {
   return (
-    <div className="grid grid-cols-6 grid-rows-2 py-16 max-xs:py-8 px-4 max-xs:px-2 max-w-7xl mx-auto section-size gap-3 overflow-x-hidden">
-      <ContactForm />
-      <ContactInfo />
-      <Availability />
+    <div className="py-16 max-xs:py-8">
+      <Sections title="Get In Touch" />
+      <div className="grid grid-cols-6 grid-rows-2  px-4 max-xs:px-2 max-w-7xl mx-auto section-size gap-3 overflow-x-hidden">
+        <ContactForm />
+        <ContactInfo />
+        <Availability />
+      </div>
     </div>
   );
 }
@@ -174,7 +178,7 @@ export function ContactForm() {
           <input
             id="firstName"
             type="text"
-            placeholder="Your First Name"
+            placeholder="First Name"
             {...register("Firstname")}
             className={`w-full p-2 bg-background border rounded-md focus:outline-none focus:ring ${
               errors.Firstname
@@ -193,7 +197,7 @@ export function ContactForm() {
           <input
             id="Secoundname"
             type="text"
-            placeholder="Your Secound Name"
+            placeholder="Secound Name"
             {...register("Secoundname")}
             className={`w-full p-2 border rounded-md bg-background focus:outline-none focus:ring ${
               errors.Secoundname

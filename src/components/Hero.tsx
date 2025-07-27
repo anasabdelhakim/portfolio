@@ -3,6 +3,8 @@ import { motion } from "motion/react";
 
 import type { ReactNode } from "react";
 import { ArrowDownWideNarrow } from "lucide-react";
+import { useIsMobile } from "@/hook/MobilrScreen";
+import { Link } from "react-router-dom";
 
 export function Hero({ children }: { children: ReactNode }) {
   const darkMode = useThemeStore((state) => state.darkMode);
@@ -18,6 +20,7 @@ export function Hero({ children }: { children: ReactNode }) {
 }
 
 export function HeroText() {
+  const isMobile = useIsMobile();
   const appReady = useThemeStore((state) => state.appReady);
   const title = "Portfolio .";
   const subtitle = "Anas Abdelhakim Frontend Developer";
@@ -28,13 +31,13 @@ export function HeroText() {
           <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center">
             <motion.span
               animate={{ x: 0, opacity: 1 }}
-              initial={{ x: 150, opacity: 0 }}
+              initial={{ x: isMobile ? 90 : 150, opacity: 0 }}
               transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
             >
               A
             </motion.span>
             <motion.span
-              initial={{ x: -150, opacity: 0 }}
+              initial={{ x: isMobile ? -90 : -150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
             >
@@ -78,31 +81,34 @@ export function HeroText() {
           </motion.p>
 
           <div className="flex justify-center items-center sm:gap-8 gap-5">
-            <motion.button
-              className="border-2 lg:text-lg sm:px-8 sm:py-3 px-4 py-2 text-sm max-xs:text-[12px] rounded-md focus hover:bg-background"
-              initial={{ opacity: 0, x: -100, scaleX: 1 }}
-              animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
-              transition={{
-                duration: 1,
-                ease: "easeInOut",
-                delay: 1.3,
-              }}
-            >
-              See Projects
-            </motion.button>
-
-            <motion.button
-              className="border-2 lg:text-lg sm:px-8 sm:py-3 px-4 py-2 text-sm rounded-md max-xs:text-[12px] focus hover:bg-background"
-              initial={{ opacity: 0, x: 100, scaleX: 1 }}
-              animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
-              transition={{
-                duration: 1,
-                ease: "easeInOut",
-                delay: 1.3,
-              }}
-            >
-              Contact Me
-            </motion.button>
+            <Link to="projects">
+              <motion.button
+                className="border-2 lg:text-lg sm:px-8 sm:py-3 px-4 py-2 text-sm max-xs:text-[12px] rounded-md focus hover:bg-background"
+                initial={{ opacity: 0, x: isMobile ? -70 : -100, scaleX: 1 }}
+                animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: 1.3,
+                }}
+              >
+                See Projects
+              </motion.button>
+            </Link>
+            <Link to="contact">
+              <motion.button
+                className="border-2 lg:text-lg sm:px-8 sm:py-3 px-4 py-2 text-sm rounded-md max-xs:text-[12px] focus hover:bg-background"
+                initial={{ opacity: 0, x: isMobile ? 70 : 100, scaleX: 1 }}
+                animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
+                transition={{
+                  duration: 1,
+                  ease: "easeInOut",
+                  delay: 1.3,
+                }}
+              >
+                Contact Me
+              </motion.button>
+            </Link>
           </div>
 
           <motion.a

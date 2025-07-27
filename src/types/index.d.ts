@@ -18,8 +18,9 @@ export type CardT = {
   title: string;
   description: string;
   technologies: string[];
+  live: string;
+  github: string;
 };
-
 type principlesT = {
   title: string;
   icon: LucideIcon;

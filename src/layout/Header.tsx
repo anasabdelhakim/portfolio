@@ -95,7 +95,7 @@ export function Navlinks() {
               isActive ? "focus hover:opacity-100" : "nav-link-inactive"
             }`
           }
-          to="/two"
+          to="/contact"
         >
           <Mail className="md:w-5 md:h-5" />
           Contact

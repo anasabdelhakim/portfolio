@@ -3,6 +3,7 @@ import { ChevronsRight, ChevronRight, Download } from "lucide-react";
 import { ScrollReveal } from "./../animation/Reveal";
 import Sections from "./Sections";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 export default function Skills() {
   return (
@@ -35,22 +36,22 @@ export default function Skills() {
             </p>
           </ScrollReveal>
           <div className="flex flex-row max-xs:flex-col items-center mt-8 max-xs:justify-center justify-start max-xs:gap-3 ">
-            {/* Button 1 */}
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm max-xs:text-[12px] max-xs:w-full rounded-md dark:bg-black bg-white border-break hover:bg-background flex items-center justify-center"
-            >
-              See Projects
-              <ChevronsRight
-                size={20}
-                className="group-hover:translate-x-1.5 duration-300 transition-transform"
-              />
-            </motion.button>
+            <Link to="projects">
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+                className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm max-xs:text-[12px] max-xs:w-full rounded-md dark:bg-black bg-white border-break hover:bg-background flex items-center justify-center"
+              >
+                See Projects
+                <ChevronsRight
+                  size={20}
+                  className="group-hover:translate-x-1.5 duration-300 transition-transform"
+                />
+              </motion.button>
+            </Link>
 
-            {/* Connecting Line */}
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: 30 }}
@@ -60,21 +61,21 @@ export default function Skills() {
             >
               <span className="w-full border-b-2 dark:bg-black bg-white border-break"></span>
             </motion.div>
-
-            {/* Button 2 */}
-            <motion.button
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.2 }}
-              className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full bg-gradient-to-r from-white dark:from-black  to-secondary border-break hover:bg-background flex items-center justify-center"
-            >
-              Contact Me
-              <ChevronRight
-                size={20}
-                className="group-hover:translate-x-1.5 duration-300 transition-transform"
-              />
-            </motion.button>
+            <Link to="contact">
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+                className="group border-2 lg:px-8 lg:py-3 px-3 py-2 text-sm rounded-md max-xs:text-[12px] max-xs:w-full bg-gradient-to-r from-white dark:from-black  to-secondary border-break hover:bg-background flex items-center justify-center"
+              >
+                Contact Me
+                <ChevronRight
+                  size={20}
+                  className="group-hover:translate-x-1.5 duration-300 transition-transform"
+                />
+              </motion.button>
+            </Link>
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: 30 }}
@@ -82,7 +83,9 @@ export default function Skills() {
               viewport={{ once: true, amount: 0.2 }}
               className="h-4 border-y-2 focus flex justify-center items-center max-xs:hidden"
             ></motion.div>
-            <motion.button
+            <motion.a
+              href="/CV.pdf"
+              download
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.9, ease: "easeOut" }}
@@ -94,7 +97,7 @@ export default function Skills() {
                 size={20}
                 className="group-hover:-rotate-90 group-hover:translate-x-1  transition-transform duration-300"
               />
-            </motion.button>
+            </motion.a>
           </div>
         </div>
 
