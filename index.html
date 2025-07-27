@@ -4,24 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anas Abdelhakim</title>
-    <link rel="stylesheet" href="intialload.css" />
+
+    <!-- Favicon -->
     <link rel="icon" href="/fav.avif" type="image/avif" />
+
+    <!-- 🧠 Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ⏩ Preload Google Font CSS (avoids blocking render) -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- 🚀 Preload your main CSS (render-blocking issue) -->
+    <link rel="preload" as="style" href="/intialload.css" />
+    <link rel="stylesheet" href="/intialload.css" />
+
+    <!-- 🧠 Preload important image like avatar if it's above the fold -->
+    <link rel="preload" as="image" href="/assets/Avtar.webp" type="image/webp" />
+
+    <!-- 🧠 Preload JS entry -->
+    <link rel="modulepreload" href="/src/main.tsx" />
   </head>
+
   <body>
     <div id="boot-splash">
       <div class="text-img">AA</div>
       <div class="loader-bar"></div>
       <div class="waiting-text">
-        Waiting For The App to Luanch<span class="dot dot-1">.</span
-        ><span class="dot dot-2">.</span><span class="dot dot-3">.</span>
+        Waiting For The App to Launch
+        <span class="dot dot-1">.</span>
+        <span class="dot dot-2">.</span>
+        <span class="dot dot-3">.</span>
       </div>
     </div>
+
     <div id="root"></div>
 
+    <!-- ✅ Defer heavy JS to allow CSS to paint first -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
