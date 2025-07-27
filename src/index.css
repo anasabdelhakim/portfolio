@@ -74,7 +74,7 @@
   }
 
   .focus {
-    @apply bg-secondary border-gray-300 dark:border-stone-600;
+    @apply bg-secondary border-gray-300 dark:border-neutral-600;
   }
 
   .nav-link-inactive {
@@ -92,7 +92,7 @@
     @apply h-auto  sm:text-lg text-sm text-neutral-500;
   }
   .icon-hoverd {
-    @apply p-2 hover:bg-stone-200 dark:hover:bg-stone-800  transition-all rounded-full;
+    @apply p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800  transition-all rounded-full;
   }
 }
 button {
@@ -104,7 +104,7 @@ button {
     @apply hover:opacity-80 transition-opacity;
   }
   .border-break {
-    @apply border-stone-300 dark:border-stone-600;
+    @apply border-neutral-300 dark:border-neutral-600;
   }
   .bg-fanBlack {
     overflow: hidden;

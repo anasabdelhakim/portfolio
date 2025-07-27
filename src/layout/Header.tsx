@@ -238,7 +238,7 @@ function AvatarImage() {
       )}
 
       {!zoomIn && (
-        <div className="overlay-avtar text-stone-200 hover:opacity-100 transition-opacity">
+        <div className="overlay-avtar text-neutral-200 hover:opacity-100 transition-opacity">
           <div className="absolute top-2 right-1">
             <Expand size={16} />
           </div>
@@ -279,7 +279,7 @@ function SocialLinks() {
           initial={{ x: -10, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.2, ease: "easeInOut", delay: i * 0.3 }}
-          className="text-sm max-sm:text-[12px] font-medium text-center dark:hover:bg-stone-800 px-2 py-1 hover:bg-stone-200 transition-colors rounded-md flex items-center justify-between gap-2"
+          className="text-sm max-sm:text-[12px] font-medium text-center dark:hover:bg-neutral-800 px-2 py-1 hover:bg-neutral-200 transition-colors rounded-md flex items-center justify-between gap-2"
         >
           <span>{label}:</span>
           <a href={href} target="_blank" rel="noopener noreferrer">
