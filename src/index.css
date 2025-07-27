@@ -89,7 +89,7 @@
     @apply overflow-hidden border-r-2 text-sub-color border-gray-600 dark:border-gray-300 whitespace-nowrap font-mono sm:text-2xl text-lg;
   }
   .described-title {
-    @apply h-auto  sm:text-lg text-sm text-stone-500;
+    @apply h-auto  sm:text-lg text-sm text-neutral-500;
   }
   .icon-hoverd {
     @apply p-2 hover:bg-stone-200 dark:hover:bg-stone-800  transition-all rounded-full;
