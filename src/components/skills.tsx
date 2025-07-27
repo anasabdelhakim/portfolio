@@ -36,7 +36,7 @@ export default function Skills() {
             </p>
           </ScrollReveal>
           <div className="flex flex-row max-xs:flex-col items-center mt-8 max-xs:justify-center justify-start max-xs:gap-3 ">
-            <Link to="projects">
+            <Link to="projects" className="max-xs:w-full">
               <motion.button
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -61,7 +61,7 @@ export default function Skills() {
             >
               <span className="w-full border-b-2 dark:bg-black bg-white border-break"></span>
             </motion.div>
-            <Link to="contact">
+            <Link to="contact" className="max-xs:w-full">
               <motion.button
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

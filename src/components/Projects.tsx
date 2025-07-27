@@ -7,7 +7,7 @@ import { useState } from "react";
 const cards: CardT[] = [
   {
     img: "./assets/ecomerce.png",
-    title: "Fuchsia E-Commerce",
+    title: "Fuchsia App",
     description:
       "A full-stack e-commerce platform with responsive design, filtering, cart management, Stripe checkout, and secure authentication.",
     technologies: ["Angular", "Tailwind", "TypeScript", "Firebase", "Stripe"],
@@ -16,7 +16,7 @@ const cards: CardT[] = [
   },
   {
     img: "./assets/quizmastr-app.png",
-    title: "Quiz Mastr",
+    title: "Quiz Mastro",
     description:
       "An interactive quiz app with admin dashboard, question types, grading, timer-based quizzes, and student login.",
     technologies: ["React", "TypeScript", "Tailwind", "useReducer", "Context"],
@@ -25,7 +25,7 @@ const cards: CardT[] = [
   },
   {
     img: "./assets/Hdo-movie.png",
-    title: "HDO Box Clone",
+    title: "HDO Box",
     description:
       "A movie app clone with categorized sliders, React Router, TMDb API, playlist feature, and lazy loading for performance.",
     technologies: ["React", "TMDb API", "Tailwind", "Swiper", "React Query"],
