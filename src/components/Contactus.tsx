@@ -6,20 +6,8 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Loader, Send, Phone, Mail, MapPin } from "lucide-react";
 import Sections from "./Sections";
-
-const formSchema = z.object({
-  Firstname: z
-    .string()
-    .min(2, { message: "Name must be at least 2 characters." }),
-  Secoundname: z
-    .string()
-    .min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Enter a valid email." }),
-  subject: z.string().min(3, { message: "Subject is required." }),
-  title: z
-    .string()
-    .min(5, { message: "Message must be at least 5 characters." }),
-});
+import { formSchema } from "@/validation";
+import { motion } from "motion/react";
 
 type ContactFormData = z.infer<typeof formSchema>;
 
@@ -37,7 +25,12 @@ export function Contact() {
 }
 function ContactInfo() {
   return (
-    <div className="col-span-2 max-lg:col-span-3 max-sm:col-span-6">
+    <motion.div
+      initial={{ x: 50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4, delay: 0.5, ease: "easeInOut" }}
+      className="col-span-2 max-lg:col-span-3 max-sm:col-span-6"
+    >
       <h2 className="font-semibold text-xl px-4 max-xs:px-2 mb-3">
         Contact Information
       </h2>
@@ -88,13 +81,16 @@ function ContactInfo() {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 function Availability() {
   return (
-    <section
-      className="col-span-2 max-lg:col-span-3 max-sm:col-span-6 p-5 focus space-y-3"
+    <motion.section
+      initial={{ x: 50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4, delay: 0.9, ease: "easeInOut" }}
+      className="col-span-2 max-lg:col-span-3 max-sm:col-span-6 p-5 focus space-y-3 rounded-md"
       aria-label="Availability"
     >
       <h1 className="sm:text-2xl text-lg font-semibold">
@@ -120,7 +116,7 @@ function Availability() {
       <p className="font-medium sm:text-lg mt-10 max-sm:mt-3">
         I'm excited to hear from you! 😊✨
       </p>
-    </section>
+    </motion.section>
   );
 }
 
@@ -161,7 +157,10 @@ export function ContactForm() {
   };
 
   return (
-    <form
+    <motion.form
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4, delay: 0.1, ease: "easeInOut" }}
       ref={formRef}
       onSubmit={handleSubmit(onSubmit)}
       className="row-span-2 col-span-4 max-lg:col-span-6 p-6 max-xs:px-4  rounded-lg shadow space-y-6 bg-secondary"
@@ -278,6 +277,6 @@ export function ContactForm() {
         {isSubmitting ? <Loader className="animate-spin" /> : <Send />}
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>
-    </form>
+    </motion.form>
   );
 }
