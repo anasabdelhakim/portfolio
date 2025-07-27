@@ -27,6 +27,8 @@ function ContactInfo() {
   return (
     <motion.div
       initial={{ x: 50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.4, delay: 0.3, ease: "easeInOut" }}
       className="col-span-2 max-lg:col-span-3 max-sm:col-span-6"
     >
@@ -87,6 +89,8 @@ function Availability() {
   return (
     <motion.section
       initial={{ x: 50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.4, delay: 0.6, ease: "easeInOut" }}
       className="col-span-2 max-lg:col-span-3 max-sm:col-span-6 p-5 focus space-y-3 rounded-md"
       aria-label="Availability"
@@ -157,6 +161,8 @@ export function ContactForm() {
   return (
     <motion.form
       initial={{ x: -50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.4, delay: 0.1, ease: "easeInOut" }}
       ref={formRef}
       onSubmit={handleSubmit(onSubmit)}
