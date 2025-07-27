@@ -60,46 +60,48 @@ export function Logo() {
 
 export function Navlinks() {
   return (
-    <nav className="flex justify-center items-center gap-3 max-sm:hidden">
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `nav-link flex items-center gap-1 ${
-              isActive ? "focus hover:opacity-100" : "nav-link-inactive"
-            }`
-          }
-          to="/"
-        >
-          <Home className="w-5 h-5" />
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `nav-link flex items-center gap-1 ${
-              isActive ? "focus hover:opacity-100" : "nav-link-inactive"
-            }`
-          }
-          to="/projects"
-        >
-          <Folder className="w-5 h-5" />
-          Project
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            `nav-link flex items-center gap-1 ${
-              isActive ? "focus hover:opacity-100" : "nav-link-inactive"
-            }`
-          }
-          to="/contact"
-        >
-          <Mail className="md:w-5 md:h-5" />
-          Contact
-        </NavLink>
-      </li>
+    <nav>
+      <ul className="flex justify-center items-center gap-3 max-sm:hidden">
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link flex items-center gap-1 ${
+                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+              }`
+            }
+            to="/"
+          >
+            <Home className="w-5 h-5" />
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link flex items-center gap-1 ${
+                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+              }`
+            }
+            to="/projects"
+          >
+            <Folder className="w-5 h-5" />
+            Project
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              `nav-link flex items-center gap-1 ${
+                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+              }`
+            }
+            to="/contact"
+          >
+            <Mail className="md:w-5 md:h-5" />
+            Contact
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }
@@ -108,46 +110,48 @@ export function MobNavlinks() {
   const isMobile = useIsMobile();
   if (isMobile) {
     return (
-      <nav className="fixed bottom-0 z-50 h-15 w-full bg-background border-t-1 border-break flex items-center px-2 justify-between shadow-el">
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
-                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
-              }`
-            }
-            to="/"
-          >
-            <Home className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
-                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
-              }`
-            }
-            to="/projects"
-          >
-            <Folder className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
-            Project
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
-                isActive ? "focus hover:opacity-100" : "nav-link-inactive"
-              }`
-            }
-            to="/contact"
-          >
-            <Mail className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
-            Contact
-          </NavLink>
-        </li>
+      <nav>
+        <ul className="fixed bottom-0 z-50 h-15 w-full bg-background border-t-1 border-break flex items-center px-2 justify-between shadow-el">
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
+                  isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+                }`
+              }
+              to="/"
+            >
+              <Home className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
+                  isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+                }`
+              }
+              to="/projects"
+            >
+              <Folder className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+              Project
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                `nav-link flex items-center  max-xs:text-[14px] gap-1 ${
+                  isActive ? "focus hover:opacity-100" : "nav-link-inactive"
+                }`
+              }
+              to="/contact"
+            >
+              <Mail className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+              Contact
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     );
   }
