@@ -28,7 +28,7 @@ export function HeroText() {
     <div className="flex flex-col gap-5 max-xs:justify-center text-center items-center max-w-full relative z-30">
       {appReady && (
         <>
-          <div className="flex hero-text bg-secondary rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center">
+          <div className="flex hero-text bg-background rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center">
             <motion.span
               animate={{ x: 0, opacity: 1 }}
               initial={{ x: isMobile ? 90 : 150, opacity: 0 }}
