@@ -34,7 +34,7 @@ const Technicality = () => {
   return (
     <section className="py-16 max-xs:py-8 px-4 max-w-6xl mx-auto section-size max-xs:px-2">
       <Sections title="Technical Skills" />
-      <ul className="grid lg:grid-cols-3  gap-5">
+      <ul className="grid lg:grid-cols-3  gap-5 max-xs:gap-2">
         {principles.map(({ title, icon: Icon, text }) => (
           <li
             key={title}

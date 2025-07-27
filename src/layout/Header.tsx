@@ -143,7 +143,7 @@ export function MobNavlinks() {
                 isActive ? "focus hover:opacity-100" : "nav-link-inactive"
               }`
             }
-            to="/two"
+            to="/contact"
           >
             <Mail className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
             Contact
