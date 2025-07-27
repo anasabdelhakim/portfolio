@@ -70,7 +70,7 @@ function Card({ card, index }: { card: CardT; index: number }) {
           <h3 className="font-bold sm:text-xl text-md">{card.title}</h3>
           <p
             onClick={() => setshowmore((show) => !show)}
-            className="text-stone-500 sm:text-[16px] text-xs max-xs:text-[10px] cursor-pointer"
+            className="text-neutral-500 sm:text-[16px] text-xs max-xs:text-[10px] cursor-pointer"
           >
             {showmore ? (
               <>

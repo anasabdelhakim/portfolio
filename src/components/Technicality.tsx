@@ -50,7 +50,7 @@ const Technicality = () => {
               <h1 className="text-xl  font-semibold mt-2 max-xs:text-[16px]">
                 {title}
               </h1>
-              <p className="text-stone-500 mt-1 max-xs:text-xs">{text}</p>
+              <p className="text-neutral-500 mt-1 max-xs:text-xs">{text}</p>
             </div>
           </li>
         ))}

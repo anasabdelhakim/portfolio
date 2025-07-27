@@ -50,7 +50,7 @@ function ContactInfo() {
           <h3>Email</h3>
           <a
             href="mailto:anasabdoali22@gmail.com"
-            className="break-words w-full  text-stone-500"
+            className="break-words w-full  text-neutral-500"
           >
             anasabdoali22@gmail.com
           </a>
@@ -65,7 +65,7 @@ function ContactInfo() {
           <h3>Phone</h3>
           <a
             href="tel:01120038437"
-            className="break-words w-full  text-stone-500"
+            className="break-words w-full  text-neutral-500"
           >
             01120038437
           </a>
@@ -82,7 +82,7 @@ function ContactInfo() {
             href="https://maps.app.goo.gl/bF56MawThKsT97wTA"
             target="_blank"
             rel="noopener noreferrer"
-            className="break-words w-full text-stone-500"
+            className="break-words w-full text-neutral-500"
           >
             ElSheikh Zayed
           </a>
@@ -102,7 +102,7 @@ function Availability() {
       </h1>
 
       <h2
-        className="text-stone-500 flex items-center gap-2  sm:text-lg"
+        className="text-neutral-500 flex items-center gap-2  sm:text-lg"
         role="status"
         aria-live="polite"
       >
@@ -113,7 +113,7 @@ function Availability() {
         Available for new projects
       </h2>
 
-      <p className="text-stone-500 sm:text-lg">
+      <p className="text-neutral-500 sm:text-lg">
         I'm currently accepting new freelance projects and full-time
         opportunities. Let's discuss how we can work together!
       </p>
