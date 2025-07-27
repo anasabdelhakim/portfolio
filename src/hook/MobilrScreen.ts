@@ -12,7 +12,6 @@ export function useIsMobile(breakpoint = MOBILE_BREAKPOINT): boolean {
     };
 
     window.addEventListener("resize", handleResize);
-
     
     handleResize();
 
