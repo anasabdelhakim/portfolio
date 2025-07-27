@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -10,24 +11,19 @@ export default function Footer() {
         {/* Navigation Links */}
         <ul className="flex flex-wrap justify-center gap-6 text-sm">
           <li>
-            <a href="#about" className="opacity-hover">
-              About
-            </a>
+            <Link to="/" className="opacity-hover">
+              Home
+            </Link>
           </li>
           <li>
-            <a href="#projects" className="opacity-hover">
+            <Link to="/projects" className="opacity-hover">
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#skills" className="opacity-hover">
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="opacity-hover">
+            <Link to="/contact" className="opacity-hover">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 

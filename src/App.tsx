@@ -4,10 +4,12 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import { Toaster } from "sonner";
 import Contactus from "./pages/Contactus";
+import ScrollToTop from "./hook/Scrollup";
 export default function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<Home />} />

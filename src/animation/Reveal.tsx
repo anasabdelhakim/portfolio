@@ -12,7 +12,7 @@ interface ScrollRevealProps {
 
 export const ScrollReveal = ({
   children,
-  delay = 0.3,
+  delay = 0.1,
   yOffset = 20,
   className = "",
 }: ScrollRevealProps) => {
