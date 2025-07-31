@@ -14,7 +14,6 @@ import { useThemeStore } from "@/store/appStore";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useIsMobile } from "@/hook/MobilrScreen";
-import { motion } from "motion/react";
 import { useClickOutside } from "@/hook/clickOutside";
 import type { LottieProps } from "@/types";
 
@@ -121,7 +120,7 @@ export function MobNavlinks() {
               }
               to="/"
             >
-              <Home className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+              <Home className="w-5 h-5 max-xs:w-4.5 max-xs:h-4.5" />
               Home
             </NavLink>
           </li>
@@ -134,7 +133,7 @@ export function MobNavlinks() {
               }
               to="/projects"
             >
-              <Folder className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+              <Folder className="w-5 h-5 max-xs:w-4.5 max-xs:h-4.5" />
               Project
             </NavLink>
           </li>
@@ -147,7 +146,7 @@ export function MobNavlinks() {
               }
               to="/contact"
             >
-              <Mail className="w-5 h-5 max-xs:w-4 max-xs:h-4" />
+              <Mail className="w-5 h-5 max-xs:w-4.5 max-xs:h-4.5" />
               Contact
             </NavLink>
           </li>
@@ -261,34 +260,41 @@ function AvatarImage() {
 function SocialLinks() {
   const links = [
     {
-      label: "Linkedin",
-      href: "https://linkedin.com/in/anas-abdelhakim",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/anas-abdelhakim-548aa5268/",
       Icon: Linkedin,
     },
     {
-      label: "Github",
+      label: "GitHub",
       href: "https://github.com/anasabdelhakim",
       Icon: Github,
     },
-    { label: "Twitter", href: "https://twitter.com", Icon: Twitter },
-    { label: "Facebook", href: "https://facebook.com", Icon: Facebook },
+    {
+      label: "Twitter",
+      href: "https://x.com/AnasAli297837",
+      Icon: Twitter,
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/anas.abdlhakim/",
+      Icon: Facebook,
+    },
   ];
-
   return (
     <div className="flex flex-col justify-between">
-      {links.map(({ label, href, Icon }, i) => (
-        <motion.div
+      {links.map(({ label, href, Icon }) => (
+        <a
           key={label}
-          initial={{ x: -10, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.2, ease: "easeInOut", delay: i * 0.3 }}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-sm max-sm:text-[12px] font-medium text-center dark:hover:bg-neutral-800 px-2 py-1 hover:bg-neutral-200 transition-colors rounded-md flex items-center justify-between gap-2"
+          aria-label={`Visit my ${label}`}
+          title={label}
         >
           <span>{label}:</span>
-          <a href={href} target="_blank" rel="noopener noreferrer">
-            <Icon className="w-4 h-4" />
-          </a>
-        </motion.div>
+          <Icon className="w-4 h-4" />
+        </a>
       ))}
     </div>
   );
