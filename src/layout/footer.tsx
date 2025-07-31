@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="py-8 px-4 border-t-1 border-break max-sm:mb-11 max-xs:py-5">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 max-xs:gap-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 max-xs:gap-3">
         {/* Name or Logo */}
         <div className="text-xl font-semibold">Anas Abdelhakim</div>
 
