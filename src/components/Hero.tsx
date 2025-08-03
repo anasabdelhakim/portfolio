@@ -64,7 +64,7 @@ export function HeroText() {
           <motion.div
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
             className="border-r-2 text-sub-color border-gray-600 dark:border-gray-300 whitespace-nowrap font-mono sm:text-2xl text-lg max-xs:text-sm overflow-hidden will-change-transform"
           >
             {subtitle}
