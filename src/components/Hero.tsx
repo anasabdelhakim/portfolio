@@ -1,6 +1,6 @@
 import { useThemeStore } from "@/store/appStore";
 import { motion } from "framer-motion";
-import { useIsMobile } from "@/hook/MobilrScreen";
+
 import { Link } from "react-router-dom";
 import { ArrowDownWideNarrow } from "lucide-react";
 
@@ -18,7 +18,6 @@ export function Hero({ children }: { children: React.ReactNode }) {
 }
 
 export function HeroText() {
-  const isMobile = useIsMobile();
   const appReady = useThemeStore((state) => state.appReady);
   const title = "Portfolio.";
   const subtitle = "Anas Abdelhakim Frontend Developer";
