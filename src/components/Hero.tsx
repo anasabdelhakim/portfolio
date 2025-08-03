@@ -31,13 +31,13 @@ export function HeroText() {
           <div className="flex hero-text bg-background rounded-full sm:w-45 sm:h-45  sm:text-8xl w-30 h-30 max-xs:w-25 max-xs:text-5xl max-xs:h-25 text-6xl justify-center items-center">
             <motion.span
               animate={{ x: 0, opacity: 1 }}
-              initial={{ x: isMobile ? 70 : 150, opacity: 0 }}
+              initial={{ x: isMobile ? 75 : 150, opacity: 0 }}
               transition={{ duration: 0.75, ease: "easeInOut", delay: 0.05 }}
             >
               A
             </motion.span>
             <motion.span
-              initial={{ x: isMobile ? -70 : -150, opacity: 0 }}
+              initial={{ x: isMobile ? -75 : -150, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.75, ease: "easeInOut", delay: 0.05 }}
             >
