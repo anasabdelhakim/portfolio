@@ -52,7 +52,7 @@ export function HeroText() {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
-                  delay: 0.4 + i * 0.1,
+                  delay: 0.4 + i * 0.08,
                 }}
                 className="font-extrabold"
               >
@@ -64,7 +64,7 @@ export function HeroText() {
           <motion.div
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 1 }}
             className="border-r-2 text-sub-color border-gray-600 dark:border-gray-300 whitespace-nowrap font-mono sm:text-2xl text-lg max-xs:text-sm overflow-hidden will-change-transform"
           >
             {subtitle}
@@ -72,7 +72,7 @@ export function HeroText() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.5, duration: 0.6, ease: "easeInOut" }}
+            transition={{ delay: 1.7, duration: 0.6, ease: "easeInOut" }}
             className="sm:max-w-xl max-w-sm   described-title max-xs:text-[12px]"
           >
             I craft responsive and interactive web applications with clean and
@@ -88,7 +88,7 @@ export function HeroText() {
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
-                  delay: 1.8,
+                  delay: 2,
                 }}
               >
                 See Projects
@@ -102,7 +102,7 @@ export function HeroText() {
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
-                  delay: 1.8,
+                  delay: 2,
                 }}
               >
                 Contact Me
@@ -114,7 +114,7 @@ export function HeroText() {
             href="#skills"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.4, ease: "easeInOut", duration: 0.6 }}
+            transition={{ delay: 2.6, ease: "easeInOut", duration: 0.6 }}
             className="mt-5 flex flex-col cursor-pointer w-full"
           >
             <p className="text-left max-xs:text-[12px]">scroll to explore</p>
