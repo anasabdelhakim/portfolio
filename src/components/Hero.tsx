@@ -64,7 +64,7 @@ export function HeroText() {
           <motion.div
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
             className="border-r-2 text-sub-color border-gray-600 dark:border-gray-300 whitespace-nowrap font-mono sm:text-2xl text-lg max-xs:text-sm overflow-hidden will-change-transform"
           >
             {subtitle}
@@ -72,7 +72,7 @@ export function HeroText() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6, ease: "easeInOut" }}
+            transition={{ delay: 1.2, duration: 0.6, ease: "easeInOut" }}
             className="sm:max-w-xl max-w-sm   described-title max-xs:text-[12px]"
           >
             I craft responsive and interactive web applications with clean and
@@ -88,7 +88,7 @@ export function HeroText() {
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
-                  delay: 1.2,
+                  delay: 1.5,
                 }}
               >
                 See Projects
@@ -102,7 +102,7 @@ export function HeroText() {
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
-                  delay: 1.2,
+                  delay: 1.5,
                 }}
               >
                 Contact Me
@@ -114,7 +114,7 @@ export function HeroText() {
             href="#skills"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8, ease: "easeInOut", duration: 0.6 }}
+            transition={{ delay: 2.1, ease: "easeInOut", duration: 0.6 }}
             className="mt-5 flex flex-col cursor-pointer w-full"
           >
             <p className="text-left max-xs:text-[12px]">scroll to explore</p>
