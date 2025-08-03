@@ -52,7 +52,7 @@ export function HeroText() {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{
-                  delay: 0.4 + i * 0.1,
+                  delay: 0.4 + i * 0.8,
                 }}
                 className="font-extrabold"
               >
@@ -72,7 +72,7 @@ export function HeroText() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6, ease: "easeInOut" }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeInOut" }}
             className="sm:max-w-xl max-w-sm   described-title max-xs:text-[12px]"
           >
             I craft responsive and interactive web applications with clean and
@@ -86,7 +86,7 @@ export function HeroText() {
                 initial={{ opacity: 0, x: isMobile ? -60 : -100, scaleX: 1 }}
                 animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: "easeInOut",
                   delay: 1.2,
                 }}
@@ -100,7 +100,7 @@ export function HeroText() {
                 initial={{ opacity: 0, x: isMobile ? 60 : 100, scaleX: 1 }}
                 animate={{ opacity: 1, x: 0, scaleX: [1, 1.5, 1] }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: "easeInOut",
                   delay: 1.2,
                 }}
