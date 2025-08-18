@@ -199,7 +199,7 @@ export const Avtar = ({ children }: { children: ReactNode }) => {
           w-0 h-0 
           border-l-8 border-l-transparent 
           border-r-8 border-r-transparent 
-          border-b-8 border-b-foreground"
+          border-b-8 border-b-neutral-300 dark:border-b-neutral-600"
         />
       </div>
     </div>

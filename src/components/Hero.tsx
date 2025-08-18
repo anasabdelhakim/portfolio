@@ -72,7 +72,7 @@ export function HeroText() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.7, duration: 0.6, ease: "easeInOut" }}
+            transition={{ delay: 1.4, duration: 0.6, ease: "easeInOut" }}
             className="sm:max-w-xl max-w-sm   described-title max-xs:text-[12px]"
           >
             I craft responsive and interactive web applications with clean and
@@ -88,7 +88,7 @@ export function HeroText() {
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
-                  delay: 2,
+                  delay: 1.7,
                 }}
               >
                 See Projects
@@ -102,7 +102,7 @@ export function HeroText() {
                 transition={{
                   duration: 1,
                   ease: "easeInOut",
-                  delay: 2,
+                  delay: 1.7,
                 }}
               >
                 Contact Me
@@ -114,7 +114,7 @@ export function HeroText() {
             href="#skills"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.6, ease: "easeInOut", duration: 0.6 }}
+            transition={{ delay: 2.3, ease: "easeInOut", duration: 0.6 }}
             className="mt-5 flex flex-col cursor-pointer w-full"
           >
             <p className="text-left max-xs:text-[12px]">scroll to explore</p>
